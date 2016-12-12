@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>3D</title>
+		
+		<style>
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0 auto;
+				width: 500px;
+				height: 50px;
+			}
+			li {
+				height: 30px;
+				width: 30px;
+				background-color: transparent;
+				text-align: center;
+				cursor: pointer;
+				-webkit-backface-visibility: hidden;
+			}
+				li.roundabout-in-focus {
+					cursor: default;
+				}
+			li span {
+				display: block;
+				padding-top: 30px;
+			}
+
+			#carbonads-container {
+				clear: both;
+				margin-top: 200px;
+			}
+			#carbonads-container .carbonad {
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>3D</h1>
+		
+		<ul>
+			<li><a href="http://www.hotmail.com"><img src="images/a.png"/></a></li>
+			<li><a href="http://www.google.com"><img src="images/google.jpg"/></a></li>
+			<li>c</li>
+			<li>d</li>
+			<li>e</li>
+		</ul>
+		
+		<script src="lib/jquery-1.4.2.min.js"></script>
+		<script src="roundabout/jquery.roundabout.js"></script>
+		<script src="lib/jquery.easing.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('li')
+					.bind({
+						"reposition": function() {
+							var degrees = $(this).data('roundabout').degrees,
+							    roundaboutBearing = $(this).parent().data('roundabout').bearing,
+							    rotateY = Math.round(roundaboutBearing - degrees);
+							
+							$(this).css({
+								"-webkit-transform": "perspective(2000) rotateY(" + rotateY + "deg)",
+								"-moz-transform": "perspective(2000) rotateY(" + rotateY + "deg)",
+								"transform": "perspective(2000) rotateY(" + rotateY + "deg)"
+							});
+						}
+					})
+				
+				$('ul').roundabout({
+					minScale: 0.7,
+					easing: 'easeOutElastic',
+					duration: 2600
+				});
+			});
+		</script>
+
+	</body>
+</html></html>
