@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'hiztegi074.db.13193544.hostedresource.com';
-$db['default']['username'] = 'hiztegi074';
-$db['default']['password'] = 'Tempe12@';
-$db['default']['database'] = 'hiztegi074';
+$db['default']['hostname'] = 'xxxx';
+$db['default']['username'] = 'xxxx';
+$db['default']['password'] = 'xxxx';
+$db['default']['database'] = 'xxxx';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
